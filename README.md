@@ -1,4 +1,4 @@
 Boogie Boys
 ==========
 
-New boogieboys.pl website.
+New http://boogieboys.pl website.
