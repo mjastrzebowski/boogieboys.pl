@@ -1,3 +1,6 @@
+@import url(http://fonts.googleapis.com/css?family=Chivo:400,900);
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,700,800);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,latin-ext);
 /* Welcome to Compass.
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
@@ -67,7 +70,239 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 8, sass/screen.scss */
-body {
-  background-color: red;
+/* line 28, sass/screen.scss */
+html, body {
+  font-size: 6px;
+}
+
+/* line 32, sass/screen.scss */
+section {
+  display: block;
+  min-height: 70em;
+  padding: 0 0 10em;
+  box-sizing: border-box;
+}
+/* line 38, sass/screen.scss */
+section .container {
+  display: block;
+  width: 50em;
+  margin: 0 auto;
+  clear: both;
+}
+/* line 43, sass/screen.scss */
+section .container h2 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
+  font-size: 7.2em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: .833em 0 .556em;
+}
+/* line 50, sass/screen.scss */
+section .container p {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 2em;
+  line-height: 1.333em;
+  margin: 1em 0;
+}
+/* line 56, sass/screen.scss */
+section .container img {
+  max-width: 100%;
+}
+/* line 60, sass/screen.scss */
+section.bg-red {
+  color: white;
+  background: #a52b31 url("../img/bg-pattern-red.png") repeat;
+}
+/* line 64, sass/screen.scss */
+section#hero {
+  background: url("../img/bg-hero.jpg") bottom center no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
+  position: relative;
+}
+/* line 72, sass/screen.scss */
+section#hero .container {
+  padding: 15em 0 0;
+}
+/* line 74, sass/screen.scss */
+section#hero .container h3 {
+  font-size: 4.5em;
+}
+/* line 77, sass/screen.scss */
+section#hero .container h1 {
+  padding: 0 0 .45em;
+  background: url("../img/top-pattern-hero.png") bottom left repeat-x;
+  background-size: 3.7em;
+  font-size: 9em;
+  text-transform: uppercase;
+}
+/* line 84, sass/screen.scss */
+section#hero .container a#btn-down {
+  display: block;
+  width: 13em;
+  height: 3.833em;
+  margin: -2em auto 1em;
+  background: url("../img/top-pattern-hero-arrow.png") center center no-repeat;
+  background-size: cover;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+/* line 95, sass/screen.scss */
+section#hero .container a#btn-down:hover {
+  margin: -1em auto 0;
+}
+/* line 102, sass/screen.scss */
+section#photos {
+  color: #a52b31;
+  background: url("../img/bg-pattern-photos.png") repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+/* line 108, sass/screen.scss */
+section#photos ul li {
+  display: block;
+  float: none;
+  margin: 1em auto;
+}
+/* line 112, sass/screen.scss */
+section#photos ul li img {
+  width: 100%;
+}
+/* line 116, sass/screen.scss */
+section#photos ul:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+/* line 126, sass/screen.scss */
+section#videos ul li {
+  float: left;
+}
+/* line 129, sass/screen.scss */
+section#videos ul:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+/* line 136, sass/screen.scss */
+section#tour {
+  color: white;
+  background: url("../img/bg-tour.jpg") bottom center no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+/* line 142, sass/screen.scss */
+section#music {
+  color: #a52b31;
+  background: url("../img/bg-pattern-music.png") repeat;
+}
+/* line 150, sass/screen.scss */
+section#contact {
+  background: url("../img/bg-contact.jpg") bottom center no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+/* line 154, sass/screen.scss */
+section#contact h2 {
+  color: #a52b31;
+}
+
+/* line 160, sass/screen.scss */
+header {
+  padding-top: 5em;
+}
+/* line 162, sass/screen.scss */
+header #logo {
+  display: block;
+  float: left;
+  margin-left: 10em;
+  text-align: left;
+}
+
+/* Smartphones (portrait) ----------- */
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width: 445px) {
+  /* line 10, sass/mobile.scss */
+  html, body {
+    font-size: 8px;
+  }
+}
+/* iPads (portrait) ----------- */
+@media only screen and (min-width: 700px) {
+  /* line 19, sass/mobile.scss */
+  html, body {
+    font-size: 9px;
+  }
+
+  /* line 23, sass/mobile.scss */
+  section .container {
+    width: 70em;
+  }
+  /* line 26, sass/mobile.scss */
+  section#hero .container h1 {
+    background-size: 5.15em;
+  }
+  /* line 29, sass/mobile.scss */
+  section#photos ul li {
+    float: left;
+    width: auto;
+    margin: .25em;
+  }
+}
+/* iPads (landscape) ----------- */
+@media only screen and (min-width: 1000px), (min-device-width: 700px) and (orientation: landscape) {
+  /* line 41, sass/mobile.scss */
+  html, body {
+    font-size: 10px;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* line 46, sass/mobile.scss */
+  section {
+    width: 100%;
+    height: 100%;
+  }
+  /* line 49, sass/mobile.scss */
+  section .container {
+    width: 96em;
+  }
+  /* line 52, sass/mobile.scss */
+  section#hero .container {
+    width: 70em;
+  }
+  /* line 54, sass/mobile.scss */
+  section#hero .container h1 {
+    background-size: 5.15em;
+  }
+  /* line 58, sass/mobile.scss */
+  section#photos ul li {
+    margin: .5em;
+  }
+}
+/* bigger than Desktops and laptops ----------- */
+@media only screen and (min-width: 1200px) {
+  /* line 67, sass/mobile.scss */
+  html, body {
+    font-size: 11px;
+  }
+}
+/* bigger than Large screens ----------- */
+@media only screen and (min-width: 1800px) {
+  /* line 75, sass/mobile.scss */
+  html, body {
+    font-size: 12px;
+  }
+}
+/* retina  ----------- */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  /* styles */
 }

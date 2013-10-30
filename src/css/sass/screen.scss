@@ -5,6 +5,166 @@
 
 @import "compass/reset";
 
-body {
-  background-color: red;
+@import url(http://fonts.googleapis.com/css?family=Chivo:400,900);
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,700,800);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700&subset=latin,latin-ext);
+
+$color-red: #a52b31;
+
+@mixin font-chivo($weight: 400) {
+  font-family: 'Chivo', sans-serif;
+  font-weight: $weight;
 }
+@mixin font-raleway($weight: 400) {
+  font-family: 'Raleway', sans-serif;
+  font-weight: $weight;
+}
+@mixin font-opensans($weight: 400) {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: $weight;
+}
+
+
+html, body {
+  font-size: 6px;
+}
+
+section {
+  display: block;
+  min-height: 70em;
+  padding: 0 0 10em;
+  box-sizing: border-box;
+
+  .container {
+    display: block;
+    width: 50em;
+    margin: 0 auto;
+    clear: both;
+    h2 {
+      @include font-raleway(800);
+      font-size: 7.2em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: .833em 0 .556em;
+    }
+    p {
+      @include font-opensans;
+      font-size: 2em;
+      line-height: 1.333em;
+      margin: 1em 0;
+    }
+    img {
+      max-width: 100%;
+    }
+  }
+  &.bg-red {
+    color: white;
+    background: $color-red url('../img/bg-pattern-red.png') repeat;
+  }
+  &#hero {
+    background: url('../img/bg-hero.jpg') bottom center no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    @include font-raleway(800);
+    position: relative;
+    .container {
+      padding: 15em 0 0;
+      h3 {
+        font-size: 4.5em;
+      }
+      h1 {
+        padding: 0 0 .45em;
+        background: url('../img/top-pattern-hero.png') bottom left repeat-x;
+        background-size: 3.7em;
+        font-size: 9em;
+        text-transform: uppercase;
+      }
+      a#btn-down {
+        display: block;
+        width: 13em;
+        height: 3.833em;
+        margin: -2em auto 1em;
+        background: url('../img/top-pattern-hero-arrow.png') center center no-repeat;
+        background-size: cover;
+        -webkit-transition: all 0.2s ease-in;
+        -moz-transition: all 0.2s ease-in;
+        -o-transition: all 0.2s ease-in;
+        transition: all 0.2s ease-in;
+        &:hover {
+          margin: -1em auto 0;
+        }
+      }
+    }
+  }
+
+  &#photos {
+    color: $color-red;
+    background: url('../img/bg-pattern-photos.png') repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    ul {
+      li {
+        display: block;
+        float: none;
+        margin: 1em auto;
+        img {
+          width: 100%;
+        }
+      }
+      &:after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+    }
+  }
+
+  &#videos {
+    ul {
+      li {
+        float: left;
+      }
+      &:after {
+        content: '';
+        display: block;
+        clear: both;
+      }
+    }
+  }
+  &#tour {
+    color: white;
+    background: url('../img/bg-tour.jpg') bottom center no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  &#music {
+    color: $color-red;
+    background: url('../img/bg-pattern-music.png') repeat;
+  }
+  &#press {
+    // asdas
+  }
+
+  &#contact {
+    background: url('../img/bg-contact.jpg') bottom center no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    h2 {
+      color: $color-red;
+    }
+  }
+}
+
+header {
+  padding-top: 5em;
+  #logo {
+    display: block;
+    float: left;
+    margin-left: 10em;
+    text-align: left;
+  }
+}
+
+@import "mobile"

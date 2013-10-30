@@ -1,0 +1,86 @@
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (min-width : 310px) {
+
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen 
+and (min-width : 445px) {
+  html, body {
+    font-size: 8px;
+  }
+}
+
+/* iPads (portrait) ----------- */
+@media only screen 
+and (min-width : 700px) {
+// , (min-device-width : 700px) and (orientation : portrait) {
+  html, body {
+    font-size: 9px;
+  }
+  section {
+    .container {
+      width: 70em;
+    }
+    &#hero .container h1 {
+      background-size: 5.15em;
+    }
+    &#photos ul li {
+      float: left;
+      width: auto;
+      margin: .25em;
+    }
+  }
+}
+
+/* iPads (landscape) ----------- */
+@media only screen 
+and (min-width : 1000px), 
+(min-device-width : 700px) and (orientation : landscape) {
+  html, body {
+    font-size: 10px;
+    width: 100%;
+    height: 100%;
+  }
+  section {
+    width: 100%;
+    height: 100%;
+    .container {
+      width: 96em;
+    }
+    &#hero .container {
+      width: 70em;
+      h1 {
+        background-size: 5.15em;
+      }
+    }
+    &#photos ul li {
+      margin: .5em;
+    }
+  }
+}
+
+/* bigger than Desktops and laptops ----------- */
+@media only screen 
+and (min-width : 1200px) {
+  html, body {
+    font-size: 11px;
+  }
+}
+
+/* bigger than Large screens ----------- */
+@media only screen 
+and (min-width : 1800px) {
+  html, body {
+    font-size: 12px;
+  }
+}
+
+
+/* retina  ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+  /* styles */
+}
