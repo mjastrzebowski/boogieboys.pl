@@ -37,7 +37,7 @@ section {
 
   .container {
     display: block;
-    width: 50em;
+    width: 35em;
     margin: 0 auto;
     clear: both;
     h2 {
@@ -54,7 +54,7 @@ section {
       margin: 1em 0;
     }
     img {
-      max-width: 100%;
+      max-width: 100% !important;
     }
   }
   &.bg-red {
@@ -63,7 +63,6 @@ section {
   }
   &#hero {
     background: url('../img/bg-hero.jpg') bottom center no-repeat;
-    background-attachment: fixed;
     background-size: cover;
     color: white;
     text-align: center;
@@ -102,8 +101,6 @@ section {
   &#photos {
     color: $color-red;
     background: url('../img/bg-pattern-photos.png') repeat;
-    background-attachment: fixed;
-    background-size: cover;
     ul {
       li {
         display: block;
@@ -136,7 +133,6 @@ section {
   &#tour {
     color: white;
     background: url('../img/bg-tour.jpg') bottom center no-repeat;
-    background-attachment: fixed;
     background-size: cover;
   }
   &#music {
@@ -149,7 +145,6 @@ section {
 
   &#contact {
     background: url('../img/bg-contact.jpg') bottom center no-repeat;
-    background-attachment: fixed;
     background-size: cover;
     h2 {
       color: $color-red;

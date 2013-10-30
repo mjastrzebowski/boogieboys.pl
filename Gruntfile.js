@@ -7,24 +7,30 @@ module.exports = function(grunt) {
         separator: ';'
       },
       dist: {
-        src: ['src/**/*.js'],
-        dest: 'dist/<%= pkg.name %>.js'
+        src: [
+          'src/js/vendor/modernizr-2.6.2.min.js',
+          'src/js/vendor/jquery-1.10.2.min.js',
+          'src/js/plugins.js',
+          'src/js/main.js'
+        ],
+        dest: 'src/js/app.js'
       }
     },
     uglify: {
       options: {
         banner: '/* <%= pkg.title || pkg.name %> - v<%= pkg.version %>\n' +
-                '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
-                '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;\n'
+                ' <%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
+                ' * Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>\n' +
+                ' */\n'
       },
       dist: {
         files: {
-          'dist/<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>']
+          'src/js/app.min.js': ['<%= concat.dist.dest %>']
         }
       }
     },
     jshint: {
-      files: ['Gruntfile.js', 'src/**/*.js', '!src/**/*.min.js'],
+      files: ['Gruntfile.js', 'src/**/*.js', '!src/**/*.min.js', '!src/js/app*.js'],
       options: {
         globals: {
           jQuery: true,
@@ -43,7 +49,7 @@ module.exports = function(grunt) {
       },
       js: {
         files: '<%= jshint.files %>',
-        tasks: ['jshint', 'uglify']
+        tasks: ['jshint', 'concat', 'uglify']
       },
       livereload: {
         options: {
@@ -63,6 +69,11 @@ module.exports = function(grunt) {
       options: {
         config: 'config.rb'
       },
+      clean: {
+        options: {
+          clean: true
+        }
+      },
       dev: {
         options: {
           environment: 'development',
@@ -72,7 +83,29 @@ module.exports = function(grunt) {
       dist: {
         options: {
           environment: 'production',
-          outputStyle: 'compact'
+          outputStyle: 'compressed'
+        }
+      }
+    },
+
+    // Minify html files
+    htmlmin: {
+      options: {
+        removeComments: true,
+        removeCommentsFromCDATA: true,
+        removeCDATASectionsFromCDATA: true,
+        collapseWhitespace: true,
+        collapseBooleanAttributes: true,
+        removeAttributeQuotes: true,
+        removeRedundantAttributes: true,
+        useShortDoctype: true,
+        removeEmptyAttributes: true,
+        removeOptionalTags: true
+      },
+      main: {
+        files: {
+          'dist/index.html': 'src/index.html',
+          'dist/404.html': 'src/404.html',
         }
       }
     },
@@ -83,21 +116,43 @@ module.exports = function(grunt) {
         files: [
           {
             expand: true,
-            cwd: 'components/formalize/assets/css/',
-            src: '_formalize.scss',
-            dest: 'sass/partials/vendor/',
-            filter: 'isFile',
-            flatten: true
+            cwd: 'src',
+            src: '*',
+            dest: 'dist/'
+          },
+          {
+            src: 'src/css/app.css',
+            dest: 'dist/css/app.css'
+          },
+          {
+            src: 'src/js/app.min.js',
+            dest: 'dist/js/app.min.js'
           },
           {
             expand: true,
-            cwd: 'components/formalize/assets/images/',
-            src: '**',
-            dest: 'images/',
-            filter: 'isFile',
-            flatten: true
-          }
+            cwd: 'src/',
+            src: 'img/**',
+            dest: 'dist/'
+          },
         ]
+      }
+    },
+
+    // Deploy to server
+    scp: {
+      options: {
+        host: 'jastrzebowski.pl',
+        port: 20202,
+        username: 'mishu',
+        password: '***'
+      },
+      deploy: {
+        files: [{
+          cwd: 'dist/',
+          src: '**/*',
+          dest: '/home2/mishu/public_html/dev/<%= pkg.name %>/',
+          filter: 'isFile'
+        }]
       }
     }
   });
@@ -108,17 +163,26 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-htmlmin');
+  grunt.loadNpmTasks('grunt-scp');
+
+  grunt.registerTask('deploy', [
+    'scp'
+  ]);
 
   grunt.registerTask('build', [
-    // 'copy',
     'jshint',
+    'concat',
     'uglify',
+    'compass:clean',
     'compass:dist',
+    'copy',
+    'htmlmin'
   ]);
 
   grunt.registerTask('default', [
-    // 'copy',
     'jshint',
+    'concat',
     'uglify',
     'compass:dev',
     'watch'
