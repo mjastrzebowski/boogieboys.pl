@@ -134,6 +134,12 @@ module.exports = function(grunt) {
             src: 'img/**',
             dest: 'dist/'
           },
+          {
+            expand: true,
+            cwd: 'src/',
+            src: 'gallery/**',
+            dest: 'dist/'
+          },
         ]
       }
     },

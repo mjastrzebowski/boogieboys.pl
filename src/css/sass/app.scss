@@ -35,9 +35,19 @@ section {
   padding: 0 0 10em;
   box-sizing: border-box;
 
+  .wrapper {
+    background: url('../img/top-pattern-white.png') top center repeat-x;
+  }
+  &:nth-child(odd) .wrapper {
+    background: url('../img/top-pattern-black.png') top center repeat-x;
+  }
+  &:nth-child(1) .wrapper {
+    background: none;
+  }
+
   .container {
     display: block;
-    width: 35em;
+    width: 45em;
     margin: 0 auto;
     clear: both;
     h2 {
@@ -57,6 +67,7 @@ section {
       max-width: 100% !important;
     }
   }
+
   &.bg-red {
     color: white;
     background: $color-red url('../img/bg-pattern-red.png') repeat;
@@ -76,7 +87,7 @@ section {
       h1 {
         padding: 0 0 .45em;
         background: url('../img/top-pattern-hero.png') bottom left repeat-x;
-        background-size: 3.7em;
+        background-size: 3.3em;
         font-size: 9em;
         text-transform: uppercase;
       }
@@ -96,6 +107,10 @@ section {
         }
       }
     }
+  }
+
+  &#about {
+    // about section
   }
 
   &#photos {
