@@ -1,7 +1,7 @@
 Boogie Boys
 ==========
 
-New http://boogieboys.pl website. 
+New http://boogieboys.pl website. Development preview on http://dev.jastrzebowski.pl/boogieboys
 
 ## Setting up development environment 
 1. Install [node.js](http://nodejs.org) on your system. 
