@@ -11,22 +11,26 @@
 
 $color-red: #a52b31;
 
-@mixin font-chivo($weight: 400) {
+@mixin font-chivo($weight: 400, $size: 1em) {
   font-family: 'Chivo', sans-serif;
   font-weight: $weight;
+  font-size: $size;
 }
-@mixin font-raleway($weight: 400) {
+@mixin font-raleway($weight: 400, $size: 1em) {
   font-family: 'Raleway', sans-serif;
   font-weight: $weight;
+  font-size: $size;
 }
-@mixin font-opensans($weight: 400) {
+@mixin font-opensans($weight: 400, $size: 1em) {
   font-family: 'Open Sans', sans-serif;
   font-weight: $weight;
+  font-size: $size;
 }
 
 
 html, body {
   font-size: 6px;
+  @include font-opensans();
 }
 
 section {
@@ -51,15 +55,13 @@ section {
     margin: 0 auto;
     clear: both;
     h2 {
-      @include font-raleway(800);
-      font-size: 7.2em;
+      @include font-raleway(800, 7.2em);
       text-transform: uppercase;
       text-align: center;
       padding: .833em 0 .556em;
     }
     p {
-      @include font-opensans;
-      font-size: 2em;
+      @include font-opensans(400, 2em);
       line-height: 1.333em;
       margin: 1em 0;
     }
