@@ -51,7 +51,7 @@ section {
 
   .container {
     display: block;
-    width: 45em;
+    width: 42em;
     margin: 0 auto;
     clear: both;
     h2 {
@@ -89,7 +89,7 @@ section {
       h1 {
         padding: 0 0 .45em;
         background: url('../img/top-pattern-hero.png') bottom left repeat-x;
-        background-size: 3.3em;
+        background-size: 3.1em;
         font-size: 9em;
         text-transform: uppercase;
       }
@@ -133,6 +133,18 @@ section {
         clear: both;
       }
     }
+    #btn-more {
+      display: block;
+      float: right;
+      margin-top: 1em;
+      color: $color-red;
+      @include font-raleway(700, 2em);
+      text-transform: uppercase;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 
   &#videos {
@@ -157,7 +169,37 @@ section {
     background: url('../img/bg-pattern-music.png') repeat;
   }
   &#press {
-    // asdas
+    ul {
+      li {
+        display: block;
+        float: none;
+        margin: 2em auto;
+        a {
+          display: block;
+          width: 135px;
+          height: 90px;
+          padding-top: 90px;
+          color: white;
+          text-align: center;
+          text-decoration: none;
+          background-position: center center;
+          background-repeat: no-repeat;
+          box-sizing: border-box;
+        }
+        &.photos a {
+          background-image: url('../img/ico-photos.png');
+        }
+        &.bio a {
+          background-image: url('../img/ico-bio.png');
+        }
+        &.info a {
+          background-image: url('../img/ico-info.png');
+        }
+        &.rider a {
+          background-image: url('../img/ico-rider.png');
+        }
+      }
+    }
   }
 
   &#contact {
