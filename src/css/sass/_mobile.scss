@@ -1,14 +1,20 @@
 /* Smartphones (portrait) ----------- */
 @media only screen 
 and (min-width : 310px) {
-
+  html, body {
+    font-size: 14px;
+  }
 }
 
 /* Smartphones (landscape) ----------- */
 @media only screen 
 and (min-width : 445px) {
   html, body {
-    font-size: 8px;
+    font-size: 16px;
+
+    section .container h2 {
+      font-size: 3.6em;
+    }
   }
 }
 
@@ -17,20 +23,26 @@ and (min-width : 445px) {
 and (min-width : 700px) {
 // , (min-device-width : 700px) and (orientation : portrait) {
   html, body {
-    font-size: 9px;
+    font-size: 18px;
   }
   section {
     .container {
-      width: 70em;
+      width: 35em;
+      max-width: 35em;
     }
     &#hero .container h1 {
-      background-size: 5.15em;
+      background-size: 2.575em;
     }
     &#photos ul li {
       float: left;
       width: auto;
-      margin: .25em;
+      margin: .375em;
     }
+  }
+  header #logo {
+    float: left;
+    margin-left: 5em;
+    text-align: left;
   }
 }
 
@@ -39,7 +51,7 @@ and (min-width : 700px) {
 and (min-width : 1000px), 
 (min-device-width : 700px) and (orientation : landscape) {
   html, body {
-    font-size: 10px;
+    font-size: 20px;
     width: 100%;
     height: 100%;
   }
@@ -47,12 +59,14 @@ and (min-width : 1000px),
     width: 100%;
     height: 100%;
     .container {
-      width: 96em;
+      width: 48em;
+      max-width: 48em;
     }
     &#hero .container {
-      width: 70em;
+      width: 35em;
+      max-width: 35em;
       h1 {
-        background-size: 5.15em;
+        background-size: 2.575em;
       }
     }
     &#photos ul li {
@@ -61,22 +75,26 @@ and (min-width : 1000px),
   }
 }
 
+
 /* bigger than Desktops and laptops ----------- */
+/* 
 @media only screen 
 and (min-width : 1200px) {
   html, body {
     font-size: 11px;
   }
 }
+*/
 
 /* bigger than Large screens ----------- */
+/*
 @media only screen 
 and (min-width : 1800px) {
   html, body {
     font-size: 12px;
   }
 }
-
+*/
 
 /* retina  ----------- */
 @media
