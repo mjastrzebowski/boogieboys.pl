@@ -10,7 +10,7 @@ and (min-width : 310px) {
 @media only screen 
 and (min-width : 445px) {
   html, body {
-    font-size: 16px;
+    font-size: 18px;
 
     section .container h2 {
       font-size: 3.6em;
@@ -31,12 +31,18 @@ and (min-width : 700px) {
       max-width: 35em;
     }
     &#hero .container h1 {
-      background-size: 2.575em;
+      background-size: 5.15em;
     }
     &#photos ul li {
       float: left;
       width: auto;
       margin: .375em;
+    }
+    &#tour ul li {
+      font-size: 1.5em;
+      .btn-join {
+        display: block;
+      }
     }
   }
   header #logo {
@@ -66,22 +72,25 @@ and (min-width : 1000px),
       width: 35em;
       max-width: 35em;
       h1 {
-        background-size: 2.575em;
+        background-size: 5.15em;
       }
     }
     &#photos ul li {
       margin: .5em;
+    }
+    &#tour ul li {
+      font-size: 2em;
     }
   }
 }
 
 
 /* bigger than Desktops and laptops ----------- */
-/* 
+/*
 @media only screen 
 and (min-width : 1200px) {
   html, body {
-    font-size: 11px;
+    font-size: 22px;
   }
 }
 */
@@ -91,7 +100,7 @@ and (min-width : 1200px) {
 @media only screen 
 and (min-width : 1800px) {
   html, body {
-    font-size: 12px;
+    font-size: 24px;
   }
 }
 */
