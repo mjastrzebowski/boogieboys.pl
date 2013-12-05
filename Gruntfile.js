@@ -9,7 +9,11 @@ module.exports = function(grunt) {
       dist: {
         src: [
           'src/js/vendor/modernizr-2.6.2.min.js',
-          'src/js/vendor/jquery-1.10.2.min.js',
+          'src/js/vendor/jquery-2.0.3.min.js',
+          'src/js/vendor/jquery.scrollTo.min.js',
+          'src/js/vendor/jquery.localScroll.min.js',
+          'src/js/vendor/waypoints.min.js',
+          'src/js/vendor/waypoints-sticky.min.js',
           'src/js/plugins.js',
           'src/js/main.js'
         ],
