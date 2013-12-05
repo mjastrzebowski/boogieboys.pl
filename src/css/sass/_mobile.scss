@@ -35,11 +35,13 @@ and (min-width : 700px) {
   html, body {
     font-size: 18px;
   }
-  section {
+  section, footer {
     .container {
       width: 35em;
       max-width: 35em;
     }
+  }
+  section {
     &#hero .container h1 {
       background-size: 5.15em;
     }
@@ -71,6 +73,27 @@ and (min-width : 700px) {
     margin-left: 5em;
     text-align: left;
   }
+  footer .container {
+    nav {
+      display: block;
+      float: left;
+      font-size: 1em;
+      a {
+        display: inline;
+        padding: 0 .8em 0 .5em;
+        text-align: left;
+        border-right: 1px solid white;
+        &:last-child {
+          border-right: none;
+        }
+      }
+    }
+    p {
+      display: block;
+      float: right;
+      text-align: right;
+    }
+  }
 }
 
 /* iPads (landscape) ----------- */
@@ -82,13 +105,15 @@ and (min-width : 1000px),
     width: 100%;
     height: 100%;
   }
-  section {
-    width: 100%;
-    height: 100%;
+  section, footer {
     .container {
       width: 48em;
       max-width: 48em;
     }
+  }
+  section {
+    width: 100%;
+    height: 100%;
     &#hero .container {
       width: 35em;
       max-width: 35em;
@@ -101,6 +126,12 @@ and (min-width : 1000px),
     }
     &#tour ul li {
       font-size: 2em;
+    }
+  }
+  footer .container {
+    min-height: 15px;
+    p {
+      padding-top: 0;
     }
   }
 }

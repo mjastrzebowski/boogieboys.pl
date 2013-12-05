@@ -294,6 +294,44 @@ section {
   }
 }
 
+footer {
+  background: #a52b31;
+  clear: both;
+  .container {
+    display: block;
+    width: 21em;
+    max-width: 21em;
+    min-height: 50px;
+    margin: 0 auto;
+    padding: 1em 0;
+    color: white;
+    .content {
+      @include font-raleway(400, .7em);
+    }
+    a {
+      color: white;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    nav {
+      font-size: 2em;
+      a {
+        display: block;
+        float: none;
+        margin: 0 auto;
+        padding: .5em 0;
+        text-align: center;
+      }
+    }
+    p {
+      padding-top: 2em;
+      text-align: center;
+    }
+  }
+}
+
 header {
   padding-top: 2.5em;
   #logo {
