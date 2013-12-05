@@ -247,6 +247,7 @@ section {
     background: url('../img/bg-pattern-music.png') repeat;
   }
   &#press {
+    height: auto !important;
     ul {
       li {
         display: block;
@@ -254,15 +255,19 @@ section {
         margin: 1em auto;
         a {
           display: block;
+          float: none;
           width: 135px;
           height: 90px;
-          padding-top: 90px;
-          color: white;
-          text-align: center;
-          text-decoration: none;
-          background-position: center center;
+          margin: 0 auto;
+          padding: 100px 0 2.5em;
+          background-position: top center;
           background-repeat: no-repeat;
           box-sizing: border-box;
+          color: white;
+          @include font-raleway(800, 1.8em);
+          text-align: center;
+          text-transform: uppercase;
+          text-decoration: none;
         }
         &.photos a {
           background-image: url('../img/ico-photos.png');

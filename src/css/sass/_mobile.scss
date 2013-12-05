@@ -11,9 +11,19 @@ and (min-width : 310px) {
 and (min-width : 445px) {
   html, body {
     font-size: 18px;
-
-    section .container h2 {
-      font-size: 3.6em;
+  }
+  section {
+    .container {
+      h2 {
+        font-size: 3.6em;
+      }
+    }
+    &#press ul li {
+      float: left;
+      width: 50%;
+      a {
+        padding-bottom: 1.5em;
+      }
     }
   }
 }
@@ -42,6 +52,17 @@ and (min-width : 700px) {
       font-size: 1.5em;
       .btn-join {
         display: block;
+      }
+    }
+    &#press {
+      min-height: 30em;
+      ul li {
+        float: left;
+        width: 25%;
+        a {
+          margin-top: 1em;
+          padding: 130px 0 1.5em;
+        }
       }
     }
   }
