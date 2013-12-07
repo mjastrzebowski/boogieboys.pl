@@ -37,6 +37,8 @@ section {
   display: block;
   min-height: 35em;
   padding: 0 0 5em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 
   .wrapper {
@@ -262,6 +264,8 @@ section {
           padding: 100px 0 2.5em;
           background-position: top center;
           background-repeat: no-repeat;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
           box-sizing: border-box;
           color: white;
           @include font-raleway(800, 1.8em);
@@ -290,6 +294,59 @@ section {
     background-size: cover;
     h2 {
       color: $color-red;
+    }
+    .about {
+      margin-top: 3em;
+      h4 {
+        margin-right: 20%;
+        border-bottom: 5px solid #040205;
+        @include font-raleway(800, 1.5em);
+        text-transform: uppercase;
+      }
+      p {
+        @include font-opensans(400, 1.5em);
+        strong {
+          font-weight: 700;
+          text-transform: uppercase;
+        }
+      }
+    }
+    form {
+      label {
+        display: block;
+        float: none;
+        @include font-raleway(800, 1.5em);
+        text-transform: uppercase;
+      }
+      input[type=text], textarea {
+        display: block;
+        float: none;
+        width: 100%;
+        padding: .5em;
+        margin: .2em 0 .8em;
+        border: none;
+        @include font-opensans(400, 1em);
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      textarea {
+        height: 7.75em;
+      }
+      input[type=submit] {
+        display: block;
+        float: none;
+        padding: .5em 1em;
+        border: none;
+        background-color: #a52b31;
+        cursor: pointer;
+        color: black;
+        @include font-raleway(800, 1.5em);
+        text-transform: uppercase;
+        &:hover {
+          opacity: .9;
+        }
+      }
     }
   }
 }

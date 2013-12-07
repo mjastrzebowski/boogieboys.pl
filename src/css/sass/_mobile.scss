@@ -133,6 +133,16 @@ and (min-width : 1000px),
     &#tour ul li {
       font-size: 2em;
     }
+    &#contact {
+      .about, form {
+        float: left;
+        width: 50%;
+        margin-top: 6em;
+      }
+      .about {
+        margin-top: 16em;
+      }
+    }
   }
   footer .container {
     min-height: 15px;
