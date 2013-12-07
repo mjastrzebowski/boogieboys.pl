@@ -78,6 +78,13 @@ https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
         $('#navigation').removeClass('bg-dark').addClass('bg-light');
       }
     }
+    
+    $('#navigation a').removeClass('active');
+    if (dir == 'down') {
+      $('#navigation a[href=#' + $(this).attr('id') + ']').addClass('active');
+    } else {
+      $('#navigation a[href=#' + $(this).attr('id') + ']').prev().addClass('active');
+    }
   }, { offset: 50 });
 
   // $('#videos').waypoint(changeNavBg, { offset: 50 });
