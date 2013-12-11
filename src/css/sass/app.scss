@@ -318,7 +318,7 @@ section {
         @include font-raleway(800, 1.5em);
         text-transform: uppercase;
       }
-      input[type=text], textarea {
+      input#name, input#mail, textarea {
         display: block;
         float: none;
         width: 100%;
