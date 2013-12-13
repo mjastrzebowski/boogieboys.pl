@@ -60,7 +60,7 @@ module.exports = function(grunt) {
           livereload: true
         },
         files: [
-          'src/index.html',
+          'src/*.html',
           'src/css/*.css',
           'src/js/*.js',
           'src/img/{,**/}*.{png,jpg,jpeg,gif,webp,svg}'
@@ -109,6 +109,7 @@ module.exports = function(grunt) {
       main: {
         files: {
           'dist/index.html': 'src/index.html',
+          'dist/coming-soon.html': 'src/coming-soon.html',
           'dist/404.html': 'src/404.html',
         }
       }
